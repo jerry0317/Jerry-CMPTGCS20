@@ -4,20 +4,29 @@
 
 {% block content %}
 
-<div class="col-lg-6 col-md-9 col-sm-11 col-xs-12" style="margin-top:50pt;margin-left:auto;margin-right:auto;position:relative;">
+<div class="col-lg-6 col-md-9 col-sm-11 col-xs-12" style="margin-top:25pt; margin-bottom:25pt;margin-left:auto;margin-right:auto;position:relative;">
   <div class="alert alert-success" role="alert">
     <h4 class="alert-heading">Hello World!</h4>
     <p>If you see this message, it means everything works well.</p>
     <hr>
     <p class="mb-0">New features will be added here. Keep your eye on this.</p>
   </div>
-  <div class="card">
-  <div class="card-header text-white bg-primary">A Quick Note</div>
-  <div class="card-body">
-    <h5 class="card-title">Behind the scene...</h5>
-    <p class="card-text">This webpage is entirely built on <a href="http://flask.pocoo.org">Flask</a> and <a href="http://jinja.pocoo.org">Jinja</a>, with the programming language Python 3. I'm still trying to figure out how these things work, while at this moment, I feel it's more elegant and more efficient than the PHP framework.</p>
+  <div class="card mb-3">
+    <div class="card-header text-white bg-primary">A Quick Note</div>
+    <div class="card-body">
+      <h5 class="card-title">Behind the scene...</h5>
+      <p class="card-text">This webpage is entirely built on <a href="http://flask.pocoo.org">Flask</a> and <a href="http://jinja.pocoo.org">Jinja</a>, with the programming language Python 3. I'm still trying to figure out how these things work,
+        while at this moment, I feel it's more elegant and more efficient than the PHP framework.</p>
+    </div>
   </div>
-</div>
+  <div class="card text-white bg-secondary mb-3">
+    <div class="card-header">Recent Update</div>
+    <div class="card-body">
+      <a class="text-light font-weight-bold" href="https://github.com/jerry0317/Jerry-CMPTGCS20">View on Github</a>
+      <hr>
+      <p class="mb-0 card-text font-weight-light font-italic">Automatic information will be added here in the future.</p>
+    </div>
+  </div>
 </div>
 
 {% endblock %}
