@@ -22,9 +22,17 @@
   <div class="card text-white bg-secondary mb-3">
     <div class="card-header">Recent Update</div>
     <div class="card-body">
-      <a class="text-light font-weight-bold" href="https://github.com/jerry0317/Jerry-CMPTGCS20">View on Github</a>
+      <h6 class="card-test">{{ lastC['messageHeadlineHTML'] }} </h6>
+      <p class="mb-0 card-text font-weight-light">{{ lastC['messageBodyHTML'] }}</p>
+      <small class="card-text">Updated on {{ lastC['pushedDate'] }}</small>
       <hr>
-      <p class="mb-0 card-text font-weight-light font-italic">Automatic information will be added here in the future.</p>
+      <a class="text-light font-weight-bold" href="{{ lastC['url'] }}"><small>View on Github</small></a>
+    </div>
+  </div>
+  <div class="card border-info mb-3">
+    <div class="card-header bg-info text-white">More about API</div>
+    <div class="card-body">
+      <b class="mb-0 card-text">Proundly using <a class="text-dark" href="https://graphql.org">GraphQL</a></b>
     </div>
   </div>
 </div>
