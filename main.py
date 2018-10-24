@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def render_index():
-    lastC = gitGQL.lastCommit()
+    lastC = gitGQL.recentCommits()
     return render_template('index.html', lastC = lastC)
 
 if __name__ == "__main__":

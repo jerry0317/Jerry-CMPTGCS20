@@ -1,6 +1,7 @@
 import requests
+import os
 
-def lastCommit():
+def recentCommits():
     query = '''
     query ($owner: String!, $name: String!) {
       repository(owner: $owner, name: $name) {
@@ -40,7 +41,7 @@ def lastCommit():
         "owner": "jerry0317",
         "name": "Jerry-CMPTGCS20"
     }
-    api_token = str(open('token.key','r').read().splitlines()[0])
+    api_token = str(os.environ['GITHUB_ACCESS_TOKEN'])
     headers = {'Authorization': 'token %s' % api_token}
 
     request = requests.post('https://api.github.com/graphql', json={"query": query, "variables": variables}, headers=headers)
@@ -50,4 +51,4 @@ def lastCommit():
     else:
         raise Exception("Query failed to run by returning code of {}. {}".format(request.status_code, query))
 
-    return request.json()['data']['repository']['ref']['target']['history']['nodes'][0]
+    return request.json()['data']['repository']['ref']['target']['history']['nodes']

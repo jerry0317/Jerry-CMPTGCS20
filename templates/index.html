@@ -20,13 +20,22 @@
     </div>
   </div>
   <div class="card text-white bg-secondary mb-3">
-    <div class="card-header">Recent Update</div>
+    <div class="card-header">Recent Updates</div>
     <div class="card-body">
-      <h6 class="card-test">{{ lastC['messageHeadlineHTML'] }} </h6>
-      <p class="mb-0 card-text font-weight-light">{{ lastC['messageBodyHTML'] }}</p>
-      <small class="card-text">Updated on {{ lastC['pushedDate'] }}</small>
+      <h6 class="card-test">{{ lastC[0]['messageHeadline'] }} </h6>
+      <p class="mb-2 card-text font-weight-light">{{ lastC[0]['messageBody'] }}</p>
+      <small class="card-text">On {{ lastC[0]['pushedDate'] }}</small>
+      <a class="text-light font-weight-bold float-right" href="{{ lastC[0]['url'] }}"><small>View on Github</small></a>
       <hr>
-      <a class="text-light font-weight-bold" href="{{ lastC['url'] }}"><small>View on Github</small></a>
+      <h6 class="card-test">{{ lastC[1]['messageHeadline'] }} </h6>
+      <p class="mb-2 card-text font-weight-light">{{ lastC[1]['messageBody'] }}</p>
+      <small class="card-text">On {{ lastC[1]['pushedDate'] }}</small>
+      <a class="text-light font-weight-bold float-right" href="{{ lastC[1]['url'] }}"><small>View on Github</small></a>
+      <hr>
+      <h6 class="card-test">{{ lastC[2]['messageHeadline'] }} </h6>
+      <p class="mb-2 card-text font-weight-light">{{ lastC[2]['messageBody'] }}</p>
+      <small class="card-text">On {{ lastC[2]['pushedDate'] }}</small>
+      <a class="text-light font-weight-bold float-right" href="{{ lastC[2]['url'] }}"><small>View on Github</small></a>
     </div>
   </div>
   <div class="card border-info mb-3">
