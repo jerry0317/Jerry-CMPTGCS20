@@ -12,6 +12,25 @@
     <p class="mb-0">New features will be added here. Keep your eye on this.</p>
   </div>
   <div class="card mb-3">
+    <div class="card-header text-white bg-secondary">API Test</div>
+    <div class="card-body">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Your name: </span>
+        </div>
+        <input type="text" class="form-control" placeholder="Jerry" aria-label="Username" aria-describedby="basic-addon1" id="tryAPIInput">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="tryAPIButton">Try!</button>
+        </div>
+      </div>
+      <p class="card-text text-secondary" id="tryAPIResultText">
+        Result will appear here...
+        </p>
+        <hr>
+        <small class="card-text text-secondary ">Note: this API is built entirely with python with flask module. The API locates at <code>api.html</code> using <code>POST</code> method.</small>
+    </div>
+  </div>
+  <div class="card mb-3">
     <div class="card-header text-white bg-primary">A Quick Note</div>
     <div class="card-body">
       <h5 class="card-title">Behind the scene...</h5>
@@ -45,5 +64,21 @@
     </div>
   </div>
 </div>
+
+{% endblock %}
+
+{% block bottomJS %}
+<script>
+  $("#tryAPIButton").click(function() {
+      $.post("/api",
+      {
+        "name": $("#tryAPIInput").val()
+      },
+      function(result) {
+        result = JSON.parse(result);
+        $("#tryAPIResultText").html(result.message);
+      });
+  });
+</script>
 
 {% endblock %}
